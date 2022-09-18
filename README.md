@@ -84,6 +84,11 @@ With `FlutterWebln.makeInvoice` the user creates an invoice to be used by the we
  }
 ```
 
+Response
+```text
+[+] RequestInvoiceResponse: {paymentRequest: lnbc1u1p3jdmdzpp5aehslp0ts0wszr62lwl82qwzcgl6jtqudvg000ez75jx307vpcdqdqjfpjkcmr0yptk7unvvscqzpgxqyz5vqsp5npje0n0mct745acshv8dl5pz5kyznz2z6du45fwpyxgwvxvepdts9qyyssqdynz62hf8xh76pn4qfpswzcz4ezt6k9kj9mccf6lzwzkutm04rwjhzynctgphyk6xc0g2ftn7unjxvmszutzr07xq52h5qeja5mk3sqpqwwx7y, rHash: ee6f0f85eb83dd010f4afbbe7501c2c23fa92c1c6b10f7bf22f52468bfcc0e1a}
+```
+
 ## Send Payment
 With `FlutterWebln.sendPayment` the user sends a payment for an invoice. The user needs to provide a [BOLT-11](https://github.com/lightning/bolts/blob/master/11-payment-encoding.md) invoice.
 
@@ -98,6 +103,11 @@ With `FlutterWebln.sendPayment` the user sends a payment for an invoice. The use
  }
 ```
 
+Response
+```text
+[+] SendPaymentResponse: {preimage: 6662313533626135643134626265623164343134363734626261336263306630, paymentHash: ee6f0f85eb83dd010f4afbbe7501c2c23fa92c1c6b10f7bf22f52468bfcc0e1a, route: {total_amt: 100, total_fees: 0}}
+```
+
 ## Keysend
 With `FlutterWebln.keysend` it request the user to send a keysend payment. This payment only needs a destination public key and amount.
 
@@ -110,6 +120,11 @@ With `FlutterWebln.keysend` it request the user to send a keysend payment. This 
  } catch (error) {
    print('[!] Error in keysend method is $error');
  }
+```
+
+Response:
+```text
+[+] KeysendPaymentResponse: {preimage: 3965373033306134316666323562396262333332393463653136383634636265, paymentHash: 20594ee7899bee252917bc44ec744309d0593adf0e79469bb067afb67b632ffc, route: {total_amt: 20, total_fees: 0}}
 ```
 
 ## Sign Message
@@ -144,3 +159,12 @@ With `FlutterWebln.verifyMessage` the users's client verifies the **signature** 
  }
 ```
 
+## Example Project
+<p align="center"><img src="https://i.ibb.co/thWNPJQ/01-flutter-webln-gif-for-example.gif" alt="flutter_webln package example" /></p>
+
+The above [flutter_webln_integration](https://aniketambore.github.io/flutter_webln/) project can be found [here](https://github.com/aniketambore/flutter_webln/tree/main/example)
+
+## Reference
+- [WebLN Guide](https://www.webln.guide/introduction/readme)
+- [WebLN Dev](https://webln.dev/#/)
+- [TLV record registry](https://github.com/satoshisstream/satoshis.stream/blob/main/TLV_registry.md)

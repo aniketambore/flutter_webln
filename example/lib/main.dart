@@ -112,7 +112,6 @@ class _HomePageState extends State<HomePage> {
       await FlutterWebln.getInfo().then(allowInterop((response) {
         CustomAlertDialog(
           title: "Get Info",
-          // content: "${decode(response)}",
           content: "${weblnDecode(response)}",
         ).show(context);
       }));
@@ -193,6 +192,7 @@ class _VerifyMessageState extends State<VerifyMessage> {
           title: "Verify Message",
           content: '${weblnDecode(result)}',
         ).show(context);
+        print('[+] VerifyMessageResponse: ${weblnDecode(result)}');
       }));
     } catch (error) {
       print('[!] Error in verifyMessage method is $error');
@@ -245,6 +245,7 @@ class _SignMessageState extends State<SignMessage> {
           title: "Sign Message",
           content: '${weblnDecode(result)}',
         ).show(context);
+        print('[+] SignMessageResponse: ${weblnDecode(result)}');
       }));
     } catch (error) {
       print('[!] Error in signMessage method is $error');
@@ -292,6 +293,7 @@ class _SendPaymentState extends State<SendPayment> {
           title: "Send Payment",
           content: "${weblnDecode(result)}",
         ).show(context);
+        print('[+] SendPaymentResponse: ${weblnDecode(result)}');
       }));
     } catch (error) {
       print('[!] Error in sendPayment method is $error');
@@ -351,6 +353,7 @@ class _KeysendState extends State<Keysend> {
           title: "Keysend",
           content: "${weblnDecode(result)}",
         ).show(context);
+        print('[+] KeysendPaymentResponse: ${weblnDecode(result)}');
       }));
     } catch (error) {
       print('[!] Error in keysend method is $error');
@@ -425,6 +428,7 @@ class _MakeInvoiceState extends State<MakeInvoice> {
           title: "Make Invoice",
           content: "${weblnDecode(result)}",
         ).show(context);
+        print('[+] RequestInvoiceResponse: ${weblnDecode(result)}');
       }));
     } catch (error) {
       print('[!] Error in makeInvoice method is $error');
